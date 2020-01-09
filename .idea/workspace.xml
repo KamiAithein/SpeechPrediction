@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a282ceb2-1b17-4d3d-b8ac-4f2860aa1c6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/NGRepoWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/NGRepoReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/NGRepoReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/NGram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/NGram.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -106,7 +105,7 @@
       <updated>1578453449411</updated>
       <workItem from="1578453451083" duration="1219000" />
       <workItem from="1578530890759" duration="3267000" />
-      <workItem from="1578534208098" duration="7456000" />
+      <workItem from="1578534208098" duration="8009000" />
     </task>
     <servers />
   </component>
