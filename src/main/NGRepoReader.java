@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
+ * @author Kenneth Koepcke
  * An NGRepoReader is the output interface for the data stored on disc
  */
 public abstract class NGRepoReader implements Iterator<NGram> {
@@ -17,10 +18,10 @@ public abstract class NGRepoReader implements Iterator<NGram> {
     public List<NGram> findNGrams(String ... input){
          List<NGram> ngrams = new ArrayList<>();
          forEachRemaining(ngram -> {
-             String[] words = ngram.getWords();
+             String[] ngWords = ngram.getWords();
              boolean match = true;
              for(int i = 0; i < input.length && match; i ++){
-                 if(!words[i].equals(input[i])){
+                 if(!ngWords[i].equals(input[i])){
                      match = false;
                  }
              }
