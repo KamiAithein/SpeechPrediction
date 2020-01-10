@@ -11,14 +11,20 @@ public class NGram {
      * Words stored in this NGram.
      */
     private String[] words;
+
+    /**
+     * The final word of the NGram, which is the prediction.
+     */
+    private String finalWord;
     /**
      * the frequency of the last word in this ngram in the solution space
      */
     private double p;
 
-    public NGram(int p, String ... words){
+    public NGram(int p, String finalWord, String ... words){
         this.words = words;
         this.p = p;
+        this.finalWord = finalWord;
     }
 
     /**
@@ -26,5 +32,12 @@ public class NGram {
      */
     public String[] getWords(){
         return this.words;
+    }
+
+    /**
+     * @return the final word, which is used for prediction.
+     */
+    public String getFinal(){
+        return this.finalWord;
     }
 }

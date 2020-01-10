@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a282ceb2-1b17-4d3d-b8ac-4f2860aa1c6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/main/SpeechPredictorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeechPrediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeechPrediction.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SpeechPrediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpeechPrediction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SpeechPredictor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpeechPredictor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/SpeechPrediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/SpeechPrediction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/HashMapNGRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/HashMapNGRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/NGRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/NGRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/NGram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/NGram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/HashMapNGRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/HashMapNGRepoTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -41,13 +42,15 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AnExerciseInSyntax" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -57,6 +60,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -71,7 +77,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.HashMapNGRepoTest.getLength">
+    <configuration name="HashMapNGRepoTest.getLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpeechPrediction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.HashMapNGRepoTest" />
+      <option name="METHOD_NAME" value="getLength" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpeechPredictorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpeechPrediction" />
       <extension name="coverage">
@@ -89,6 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HashMapNGRepoTest.getLength" />
         <item itemvalue="JUnit.SpeechPredictorTest" />
       </list>
     </recent_temporary>
@@ -104,7 +127,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578453449411</updated>
       <workItem from="1578453451083" duration="1219000" />
-      <workItem from="1578530890759" duration="3108000" />
+      <workItem from="1578530890759" duration="3267000" />
+      <workItem from="1578534208098" duration="21474000" />
     </task>
     <servers />
   </component>
