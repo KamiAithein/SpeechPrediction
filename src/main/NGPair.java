@@ -21,4 +21,12 @@ public class NGPair {
         this.freq = f;
     }
 
+    public int hashCode(){
+        return this.getNG().hashCode();
+    }
+
+    public String toString(){
+        return this.NG.toString() + ", " + this.freq;
+    }
+
 }

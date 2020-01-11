@@ -86,6 +86,68 @@ class TestHashMapNGRepo extends HashMapNGRepo{
 
     }
 
+    class BooleanContainer{
+        boolean b;
+        public BooleanContainer(){
+            this.b = false;
+        }
+        public void set(boolean b){
+            this.b = b;
+        }
+    }
+
+    @Test
+    void add2NGDiff(){
+        byte length = 3;
+        TestHashMapNGRepo ngr = new TestHashMapNGRepo(length);
+        NGram ng1 = new NGram("you", "today", "how", "are");
+        NGram ng2 = new NGram("fuck", "work", "damn", "you");
+        ngr.add(ng1);
+        ngr.add(ng2);
+
+        Map<Integer, List<NGPair>> repo = ngr.getList();
+        assertTrue(repo.containsKey(Arrays.hashCode(ng1.getWords())));
+        assertTrue(repo.containsKey(Arrays.hashCode(ng2.getWords())));
+        BooleanContainer containsng1 = new BooleanContainer(), containsng2 = new BooleanContainer();
+        repo.forEach((i, ngpl) -> {
+            System.out.println(Arrays.toString(ngpl.toArray()));
+            ngpl.forEach(ngp -> {
+                if(Arrays.hashCode(ngp.getNG().getWords()) == Arrays.hashCode(ng1.getWords())) {
+                    containsng1.set(true);
+                }
+                if(Arrays.hashCode(ngp.getNG().getWords()) == Arrays.hashCode(ng2.getWords()))
+                    containsng2.set(true);
+            });
+
+        });
+        assertTrue(containsng1.b && containsng2.b);
+    }
+
+    @Test
+    void add2NGSame(){
+        byte length = 3;
+        TestHashMapNGRepo ngr = new TestHashMapNGRepo(length);
+        NGram ng1 = new NGram("you", "today", "how", "are");
+        NGram ng2 = new NGram("fuck", "today", "how", "are");
+        ngr.add(ng1);
+        ngr.add(ng2);
+
+        Map<Integer, List<NGPair>> repo = ngr.getList();
+        assertTrue(repo.containsKey(Arrays.hashCode(ng1.getWords())));
+        assertTrue(repo.containsKey(Arrays.hashCode(ng2.getWords())));
+        BooleanContainer containsng1 = new BooleanContainer(), containsng2 = new BooleanContainer();
+        repo.get(Arrays.hashCode(ng1.getWords())).forEach(ngp -> {
+            if(ngp.getNG().getFinal().equals(ng1.getFinal())) {
+                containsng1.set(true);
+            }
+            if(ngp.getNG().getFinal().equals(ng2.getFinal())) {
+                containsng2.set(true);
+            }
+            assertTrue(ngp.getFrequency() - 0.5 < 0.001);
+        });
+        assertTrue(containsng1.b && containsng2.b);
+    }
+
     /**
      * tests retrieve of ng of length 3
      */

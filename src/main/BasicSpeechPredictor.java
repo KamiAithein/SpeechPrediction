@@ -3,8 +3,10 @@ package main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * @author Kenneth Koepcke
@@ -18,12 +20,11 @@ public class BasicSpeechPredictor extends SpeechPredictor {
      * and the length of the ngram will be as specified.
      *
      * @param ngRepo the location of the ngram repository
-     * @param L      the length of the ngrams
      * @precondition ngRepo is a directory
      * n > 0
      */
-    public BasicSpeechPredictor(NGRepo ngRepo, int L) {
-        super(ngRepo, L);
+    public BasicSpeechPredictor(NGRepo ngRepo) {
+        super(ngRepo, ngRepo.getLength());
     }
 
     @Override
@@ -37,15 +38,18 @@ public class BasicSpeechPredictor extends SpeechPredictor {
                 }
                 strings[strings.length - 1] = null;
             };
+            Function<Scanner, String> next = (scanner) -> scanner.next().replaceAll("[^A-Za-z0-9]", "").toLowerCase();
             for(int i = 0; i < ngram.length; i ++){
-                ngram[i] = reader.next();
+                ngram[i] = next.apply(reader);
             }
-            this.ngRepo.add(new NGram(reader.next(), ngram));
+            String fin = next.apply(reader);
+            this.ngRepo.add(new NGram(fin, Arrays.copyOf(ngram, ngram.length)));
             while(reader.hasNext()){
-                String fin = ngram[ngram.length - 1];
                 shiftLeft.accept(ngram);
-                ngram[ngram.length - 1] = reader.next();
-                this.ngRepo.add(new NGram(fin, ngram));
+                ngram[ngram.length - 1] = fin;
+                fin = next.apply(reader);
+
+                this.ngRepo.add(new NGram(fin, Arrays.copyOf(ngram, ngram.length)));
             }
         }
         catch(java.io.FileNotFoundException e){

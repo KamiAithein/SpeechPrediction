@@ -16,6 +16,15 @@ public class HashMapNGRepo implements NGRepo<Integer, List<NGPair>> {
      */
     protected HashMap<Integer, List<NGPair>> repo;
 
+    /**
+     * The count of each occurrence of an NG in this repo
+     */
+    private Map<Integer, Integer> count;
+
+    /**
+     * The total number of entries in count per bucket
+     */
+    private Map<Integer, Integer> totalCountPerBucket;
     private final byte L;
 
     /**
@@ -29,41 +38,48 @@ public class HashMapNGRepo implements NGRepo<Integer, List<NGPair>> {
         }
         this.repo = new HashMap<>();
         this.L = L;
+        this.totalCountPerBucket = new HashMap<>();
+        this.count = new HashMap<>();
     }
 
+    class Container<T>{
+        T data;
+        Container(T data){
+            this.data = data;
+        }
+
+        public void setData(T data) {
+            this.data = data;
+        }
+    }
     @Override
     public void add(NGram data) {
         if(data.getWords().length != this.L){
             throw new IllegalArgumentException("Invalid length");
         }
-        if(this.repo.containsKey(Arrays.hashCode(data.getWords()))) {
-            List<NGPair> ngps = this.repo.get(Arrays.hashCode(data.getWords()));
-            int totalCount = ngps.size();
-            Map<Integer, Integer> eachCount = new HashMap<>();
-            eachCount.put(data.getFinal().hashCode(), 1);
-            //Get the count of each ng
-            ngps.forEach((ngp) ->{
-                int ngHash = ngp.getNG().getFinal().hashCode();
-                if(eachCount.containsKey(ngHash)){
-                    eachCount.put(ngHash, eachCount.remove(ngHash) + 1);
-                }
-                else{
-                    eachCount.put(ngHash, 1);
-                }
+        final int bucketHash = Arrays.hashCode(data.getWords());
+        final int dataHash = data.hashCode();
+        this.totalCountPerBucket.put(bucketHash, this.totalCountPerBucket.containsKey(bucketHash) ? this.totalCountPerBucket.remove(bucketHash) + 1 : 1);
+        //If there is not an entry, make a new one
+        this.count.put(dataHash, this.count.containsKey(dataHash) ? this.count.remove(dataHash) + 1 : 1);
+        if(this.repo.containsKey(bucketHash)) {
+            List<NGPair> bucket = this.repo.get(bucketHash);
+            //update the freq for each ng in this bucket while checking to see if data is already in bucket
+            int bucketCount = this.totalCountPerBucket.get(bucketHash);
+            Container<Boolean> contains = new Container<>(false);
+
+            bucket.forEach((ngp) -> {
+                ngp.setFrequency((float)count.get(ngp.hashCode())/(bucketCount));
+                if(ngp.hashCode() == dataHash)
+                    contains.setData(true);
             });
-            //update the freq for each ng
-            ngps.forEach((ngp) ->{
-                ngp.setFrequency(eachCount.get(ngp.getNG().getFinal().hashCode())/(float)(totalCount));
-            });
-            //If data not in set then add w correct frequency
-            if(eachCount.get(data.getFinal().hashCode()) == 1){
-                ngps.add(new NGPair(data, 1F/totalCount));
-            }
+            if(!contains.data)
+                bucket.add(new NGPair(data, (float)count.get(dataHash)/(bucketCount)));
         }
         else {
-            List<NGPair> ng = new LinkedList<>();
-            ng.add(new NGPair(data, 1));
-            this.repo.put(Arrays.hashCode(data.getWords()), ng);
+            List<NGPair> bucket = new LinkedList<>();
+            bucket.add(new NGPair(data, 1));
+            this.repo.put(Arrays.hashCode(data.getWords()), bucket);
         }
     }
 

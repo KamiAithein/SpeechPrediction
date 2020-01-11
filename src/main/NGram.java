@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Arrays;
+
 /**
  * @author Kenneth Koepcke
  * An NGram is a string of words of n length with a frequency p
@@ -34,5 +36,19 @@ public class NGram {
      */
     public String getFinal(){
         return this.finalWord;
+    }
+
+    public int hashCode(){
+        StringBuilder s = new StringBuilder();
+        for(int i = 0; i < this.words.length; i ++){
+            s.append(this.words[i]);
+            s.append("%");
+        }
+        s.append(this.finalWord);
+        return s.toString().hashCode();
+    }
+
+    public String toString(){
+        return Arrays.toString(this.getWords()) + ", " + finalWord;
     }
 }
