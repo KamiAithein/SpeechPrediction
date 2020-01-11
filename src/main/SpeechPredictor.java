@@ -10,43 +10,43 @@ import java.io.File;
  *  be stored in an external file
  */
 public abstract class SpeechPredictor {
+
     /**
      * The directory in which the ngram database will be stored
      */
-    protected File ngRepo;
+    protected final NGRepo ngRepo;
 
     /**
      * The length of the ngram
      */
-    protected int n;
+    protected final int L;
 
     /**
      * Constructs a main.SpeechPredictor where the repository of ngrams will be stored in a specific location,
      *  and the length of the ngram will be as specified.
      * @precondition ngRepo is a directory
      *                  n > 0
-     * @param ngRepo the location of the ngram repository
-     * @param n the length of the ngrams
+     * @param ngRepo the ngRepo
+     * @param L the length of the ngrams
      */
-    public SpeechPredictor(File ngRepo, int n){
-        assert ngRepo.isDirectory();
-        assert n > 0;
+    public SpeechPredictor(NGRepo ngRepo, int L){
+        assert L > 0;
         this.ngRepo = ngRepo;
-        this.n = n;
+        this.L = L;
     }
 
     /**
      * @return the directory containing the ngrams
      */
-    public File getNgRepo(){
+    public NGRepo getNgRepo(){
         return this.ngRepo;
     }
 
     /**
      * @return the number of grams in the ngram
      */
-    public int getN(){
-        return this.n;
+    public int getLength(){
+        return this.L;
     }
 
     /**

@@ -65,7 +65,7 @@ class TestHashMapNGRepo extends HashMapNGRepo{
     public TestHashMapNGRepo(byte L){
         super(L);
     }
-    Map<Integer, List<NGram>> getList(){
+    Map<Integer, List<NGPair>> getList(){
         return this.repo;
     }
 }
@@ -77,12 +77,12 @@ class TestHashMapNGRepo extends HashMapNGRepo{
     void add() {
         byte length = 3;
         TestHashMapNGRepo ngr = new TestHashMapNGRepo(length);
-        NGram ng = new NGram(1, "today", "how", "are", "you");
+        NGram ng = new NGram("you", "today", "how", "are");
         ngr.add(ng);
 
-        Map<Integer, List<NGram>> repo = ngr.getList();
+        Map<Integer, List<NGPair>> repo = ngr.getList();
         assertTrue(repo.containsKey(Arrays.hashCode(ng.getWords())));
-        assertTrue(repo.get(Arrays.hashCode(ng.getWords())).contains(ng));
+        assertSame(repo.get(Arrays.hashCode(ng.getWords())).get(0).getNG(), ng);
 
     }
 
@@ -93,18 +93,19 @@ class TestHashMapNGRepo extends HashMapNGRepo{
     void retrieve() {
         byte length = 3;
         TestHashMapNGRepo ngr = new TestHashMapNGRepo(length);
-        NGram ng = new NGram(1, "today", "how", "are", "you");
+        NGram ng = new NGram("you", "today", "how", "are");
 
-        Map<Integer, List<NGram>> repo = ngr.getList();
+        Map<Integer, List<NGPair>> repo = ngr.getList();
 
-        repo.put(Arrays.hashCode(ng.getWords()), new LinkedList<>(Collections.singletonList(ng)));
-        List<List<NGram>> output = new LinkedList<>();
+        NGPair ngp = new NGPair(ng, 1);
+        repo.put(Arrays.hashCode(ng.getWords()), new LinkedList<>(Collections.singletonList(ngp)));
+        List<List<NGPair>> output = new LinkedList<>();
         ngr.retrieve((hash, list) -> {
             if(hash.equals(Arrays.hashCode(ng.getWords()))){
                 output.add(list);
             }
         });
 
-        assertTrue(output.get(0).contains(ng));
+        assertTrue(output.get(0).contains(ngp));
     }
 }
