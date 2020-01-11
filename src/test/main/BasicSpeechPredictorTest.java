@@ -68,14 +68,14 @@ class BasicSpeechPredictorTest {
     }
 
     @Test
-    void predict() {
-        String[] input = {"god", "bless", "america"};
+    void predictDJT() {
+        String[] input = {"as", "long", "as", "i"};
         for(int i = 0; i < input.length; i ++){
             System.out.print(input[i]);
             System.out.print(" ");
 
         }
-        NGRepo ngp = new TestHashMapNGRepo((byte)3);
+        NGRepo ngp = new TestHashMapNGRepo((byte)4);
         TestHashMapNGRepo ngpTest = (TestHashMapNGRepo)ngp;
         BasicSpeechPredictor bsp = new BasicSpeechPredictor(ngp);
         for(int i = 0; i <= 32; i ++){
@@ -87,7 +87,41 @@ class BasicSpeechPredictorTest {
             }
             strings[strings.length - 1] = null;
         };
-        for(int i = 0; i < 50; i ++){
+        for(int i = 0; i < 500; i ++){
+            if(i % 10 == 0){
+                System.out.println();
+            }
+            String prediction = bsp.predict(input);
+            System.out.print(prediction);
+            System.out.print(" ");
+            shiftLeft.accept(input);
+            input[input.length - 1] = prediction;
+
+        }
+
+    }
+    @Test
+    void predictObama() {
+        String[] input = {"as", "long", "as", "i"};
+        for(int i = 0; i < input.length; i ++){
+            System.out.print(input[i]);
+            System.out.print(" ");
+
+        }
+        NGRepo ngp = new TestHashMapNGRepo((byte)4);
+        TestHashMapNGRepo ngpTest = (TestHashMapNGRepo)ngp;
+        BasicSpeechPredictor bsp = new BasicSpeechPredictor(ngp);
+        bsp.train(new File("data/all_obama_speeches.txt"));
+        Consumer<String[]> shiftLeft = strings -> {
+            if (strings.length > 1) {
+                System.arraycopy(strings, 1, strings, 0, strings.length - 1);
+            }
+            strings[strings.length - 1] = null;
+        };
+        for(int i = 0; i < 500; i ++){
+            if(i % 10 == 0){
+                System.out.println();
+            }
             String prediction = bsp.predict(input);
             System.out.print(prediction);
             System.out.print(" ");
