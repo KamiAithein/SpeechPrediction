@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +19,19 @@ class BasicSpeechPredictorTest {
         Map<Integer, List<NGPair>> getList(){
             return this.repo;
         }
+    }
+    @Test
+    void trainDTMain() {
+        NGRepo ngp = new TestHashMapNGRepo((byte)3);
+        TestHashMapNGRepo ngpTest = (TestHashMapNGRepo)ngp;
+        BasicSpeechPredictor bsp = new BasicSpeechPredictor(ngp);
+        for(int i = 0; i <= 32; i ++){
+            bsp.train(new File(String.format("data/djt/DJTspeeches%d.txt", i)));
+        }
+        ngpTest.repo.forEach((i, p) -> {
+            System.out.println(p);
+        });
+        System.out.println(ngp.getLength());
     }
     @Test
     void trainDT1() {
@@ -55,5 +69,32 @@ class BasicSpeechPredictorTest {
 
     @Test
     void predict() {
+        String[] input = {"god", "bless", "america"};
+        for(int i = 0; i < input.length; i ++){
+            System.out.print(input[i]);
+            System.out.print(" ");
+
+        }
+        NGRepo ngp = new TestHashMapNGRepo((byte)3);
+        TestHashMapNGRepo ngpTest = (TestHashMapNGRepo)ngp;
+        BasicSpeechPredictor bsp = new BasicSpeechPredictor(ngp);
+        for(int i = 0; i <= 32; i ++){
+            bsp.train(new File(String.format("data/djt/DJTspeeches%d.txt", i)));
+        }
+        Consumer<String[]> shiftLeft = strings -> {
+            if (strings.length > 1) {
+                System.arraycopy(strings, 1, strings, 0, strings.length - 1);
+            }
+            strings[strings.length - 1] = null;
+        };
+        for(int i = 0; i < 50; i ++){
+            String prediction = bsp.predict(input);
+            System.out.print(prediction);
+            System.out.print(" ");
+            shiftLeft.accept(input);
+            input[input.length - 1] = prediction;
+
+        }
+
     }
 }

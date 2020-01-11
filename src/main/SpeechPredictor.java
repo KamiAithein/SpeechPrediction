@@ -9,12 +9,12 @@ import java.io.File;
  *  what is most likely the next word to occur in a sentence. In order to maintain a large number of ngrams the ngrams will
  *  be stored in an external file
  */
-public abstract class SpeechPredictor {
+public abstract class SpeechPredictor<L, R> {
 
     /**
      * The directory in which the ngram database will be stored
      */
-    protected final NGRepo ngRepo;
+    protected final NGRepo<L, R>ngRepo;
 
     /**
      * The length of the ngram

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @author Kenneth Koepcke
- * An NGram is a string of words of n length with a frequency p
+ * An NGram is a string of words of n length with a frequency f
  *  representing the proportion of times that the last word occurs after
  *  the words preceding it in the data set
  */
@@ -38,6 +38,9 @@ public class NGram {
         return this.finalWord;
     }
 
+    /**
+     * @return a hashcode representing this string of strings
+     */
     public int hashCode(){
         StringBuilder s = new StringBuilder();
         for(int i = 0; i < this.words.length; i ++){

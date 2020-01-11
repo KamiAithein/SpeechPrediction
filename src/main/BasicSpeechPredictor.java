@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -13,7 +15,7 @@ import java.util.function.Function;
  * Predicts speech in a simplistic manner, where
  *  only memory is used to store data.
  */
-public class BasicSpeechPredictor extends SpeechPredictor {
+public class BasicSpeechPredictor extends SpeechPredictor<Integer, List<NGPair>> {
 
     /**
      * Constructs a main.SpeechPredictor where the repository of ngrams will be stored in a specific location,
@@ -62,6 +64,26 @@ public class BasicSpeechPredictor extends SpeechPredictor {
         if(input.length > this.L){
             throw new IllegalArgumentException("length of input greater than ngram");
         }
-        return null;
+        List<List<NGPair>> bucketContainer = new LinkedList<>();
+        this.ngRepo.retrieve((hash, list) -> {
+            if(hash.equals(Arrays.hashCode(input))){
+                bucketContainer.add(list);
+            }
+        });
+        double random = Math.random();
+        String chosen = null;
+        List<NGPair> bucket = bucketContainer.get(0);
+        double sum = 0;
+        for(int i = 0; i < bucket.size(); i ++){
+            sum += (bucket.get(i).getFrequency());
+            if(random <= sum){
+                chosen = bucket.get(i).getNG().getFinal();
+                break;
+            }
+        }
+        if(chosen == null){
+            chosen = bucket.get(0).getNG().getFinal();
+        }
+        return chosen;
     }
 }

@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a282ceb2-1b17-4d3d-b8ac-4f2860aa1c6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/main/BasicSpeechPredictorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testdata/dt1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testdata/getty.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testdata/repetition.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpeechPrediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SpeechPrediction.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/SpeechPrediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/SpeechPrediction.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/BasicSpeechPredictor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/BasicSpeechPredictor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/HashMapNGRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/HashMapNGRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/NGPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/NGPair.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/NGram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/NGram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SpeechPrediction/main/HashMapNGRepoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/SpeechPrediction/main/HashMapNGRepoTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPredictor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPredictor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/SpeechPrediction/main/BasicSpeechPredictorTest$TestHashMapNGRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/SpeechPrediction/main/BasicSpeechPredictorTest$TestHashMapNGRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/SpeechPrediction/main/BasicSpeechPredictorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/SpeechPrediction/main/BasicSpeechPredictorTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/BasicSpeechPredictor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/BasicSpeechPredictor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/HashMapNGRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/HashMapNGRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/NGPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/NGPair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/NGram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/NGram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/HashMapNGRepoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/HashMapNGRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SpeechPredictor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpeechPredictor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/main/BasicSpeechPredictorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/BasicSpeechPredictorTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,8 +86,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BasicSpeechPredictorTest.trainDT1">
-    <configuration name="BasicSpeechPredictorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BasicSpeechPredictorTest.predict">
+    <configuration name="BasicSpeechPredictorTest.predict" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpeechPrediction" />
       <extension name="coverage">
         <pattern>
@@ -102,7 +97,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="main" />
       <option name="MAIN_CLASS_NAME" value="main.BasicSpeechPredictorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="predict" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,6 +114,22 @@
       <option name="PACKAGE_NAME" value="main" />
       <option name="MAIN_CLASS_NAME" value="main.BasicSpeechPredictorTest" />
       <option name="METHOD_NAME" value="trainDT1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicSpeechPredictorTest.trainDTMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpeechPrediction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.BasicSpeechPredictorTest" />
+      <option name="METHOD_NAME" value="trainDTMain" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,29 +167,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashMapNGRepoTest.add2NGSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpeechPrediction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.HashMapNGRepoTest" />
-      <option name="METHOD_NAME" value="add2NGSame" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasicSpeechPredictorTest.predict" />
+        <item itemvalue="JUnit.BasicSpeechPredictorTest.trainDTMain" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.trainDT1" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.trainRepetition" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.trainGetty" />
-        <item itemvalue="JUnit.BasicSpeechPredictorTest" />
-        <item itemvalue="JUnit.HashMapNGRepoTest.add2NGSame" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +189,7 @@
       <updated>1578453449411</updated>
       <workItem from="1578453451083" duration="1219000" />
       <workItem from="1578530890759" duration="3267000" />
-      <workItem from="1578534208098" duration="40672000" />
+      <workItem from="1578534208098" duration="43648000" />
     </task>
     <servers />
   </component>
@@ -216,18 +212,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/BasicSpeechPredictor.java</url>
-          <line>30</line>
-          <properties class="main.BasicSpeechPredictor" method="train">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/HashMapNGRepo.java</url>
           <line>58</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/main/BasicSpeechPredictorTest.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
