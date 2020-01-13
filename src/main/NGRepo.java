@@ -26,8 +26,9 @@ public interface NGRepo<L, R> {
     /**
      * Retrieves data from NGRepo, using L as lookup data and R as
      *      storage
-     * @param filter filters the data from the NGRepo. The
-     *              data found will be stored in R
+     * @param filter filters the data from the NGRepo. As the 
+             Consumer interface does not return a value, it is the duty
+             Of the filter to store the data it finds
      */
     void retrieve(BiConsumer<L, R> filter);
 
