@@ -6,8 +6,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/SpeechPrediction/main/BasicSpeechPredictorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/SpeechPrediction/main/BasicSpeechPredictorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/main/BasicSpeechPredictorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/main/BasicSpeechPredictorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPrediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPrediction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SpeechPrediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpeechPrediction.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AnExerciseInSyntax" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/djt" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,11 +57,18 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="main" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\k3nne\Documents\programs\SpeechPrediction\data" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\k3nne\Documents\programs\SpeechPrediction\data\djt" />
+      <recent name="C:\Users\k3nne\Documents\programs\SpeechPrediction\data" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="main" />
@@ -79,7 +86,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BasicSpeechPredictorTest.predictDJT">
+  <component name="RunManager" selected="Application.SpeechPrediction">
+    <configuration name="SpeechPrediction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.SpeechPrediction" />
+      <module name="SpeechPrediction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicSpeechPredictorTest.predict" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpeechPrediction" />
       <extension name="coverage">
@@ -128,22 +148,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicSpeechPredictorTest.trainDT1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpeechPrediction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.BasicSpeechPredictorTest" />
-      <option name="METHOD_NAME" value="trainDT1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BasicSpeechPredictorTest.trainDTMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpeechPrediction" />
       <extension name="coverage">
@@ -162,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SpeechPrediction" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.predictDJT" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.predictObama" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.predict" />
         <item itemvalue="JUnit.BasicSpeechPredictorTest.trainDTMain" />
-        <item itemvalue="JUnit.BasicSpeechPredictorTest.trainDT1" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +186,8 @@
       <updated>1578453449411</updated>
       <workItem from="1578453451083" duration="1219000" />
       <workItem from="1578530890759" duration="3267000" />
-      <workItem from="1578534208098" duration="46724000" />
+      <workItem from="1578534208098" duration="47330000" />
+      <workItem from="1578874301285" duration="3612000" />
     </task>
     <servers />
   </component>

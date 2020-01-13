@@ -1,3 +1,4 @@
 Hangouts.json
-data
-out
+**/data
+**/out
+**/**/
