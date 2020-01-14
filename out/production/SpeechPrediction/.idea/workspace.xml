@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a282ceb2-1b17-4d3d-b8ac-4f2860aa1c6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPrediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPrediction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/SpeechPrediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpeechPrediction.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -187,7 +185,8 @@
       <workItem from="1578453451083" duration="1219000" />
       <workItem from="1578530890759" duration="3267000" />
       <workItem from="1578534208098" duration="47330000" />
-      <workItem from="1578874301285" duration="3612000" />
+      <workItem from="1578874301285" duration="5497000" />
+      <workItem from="1579019005331" duration="81000" />
     </task>
     <servers />
   </component>

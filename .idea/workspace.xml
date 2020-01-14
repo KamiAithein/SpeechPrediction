@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a282ceb2-1b17-4d3d-b8ac-4f2860aa1c6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPrediction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpeechPrediction/main/SpeechPrediction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/SpeechPrediction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SpeechPrediction.java" afterDir="false" />
     </list>
@@ -187,7 +187,8 @@
       <workItem from="1578453451083" duration="1219000" />
       <workItem from="1578530890759" duration="3267000" />
       <workItem from="1578534208098" duration="47330000" />
-      <workItem from="1578874301285" duration="3612000" />
+      <workItem from="1578874301285" duration="5497000" />
+      <workItem from="1579019005331" duration="1128000" />
     </task>
     <servers />
   </component>
@@ -220,6 +221,11 @@
           <line>89</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/SpeechPrediction.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -230,6 +236,10 @@
         <watch expression="ngram.length" language="JAVA" />
         <watch expression="ngram.length" language="JAVA" />
         <watch expression="this.repo" language="JAVA" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="((HashMapNGRepo)bsp.ngRepo).totalCountPerBucket" custom="main.HashMapNGRepo" />
+        <watch expression="((HashMap.Node)((HashMap)((HashMapNGRepo)bsp.ngRepo).repo).entrySet().toArray()[1]).getValue()" custom="java.util.HashMap.Node,main.HashMapNGRepo,java.util.HashMap" />
       </configuration>
     </watches-manager>
   </component>
