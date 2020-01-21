@@ -42,7 +42,7 @@ public class HashMapNGRepo implements NGRepo<Integer, List<NGPair>> {
         this.count = new HashMap<>();
     }
 
-    class Container<T>{
+    static class Container<T>{
         T data;
         Container(T data){
             this.data = data;
