@@ -1,4 +1,4 @@
-# main.SpeechPrediction
+# java.basic.SpeechPrediction
 Predict speech when given text based on ngram method
 
 Example speech found in examples directory
